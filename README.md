@@ -2,36 +2,12 @@
 Um estudo sobre o ray cast do unity
 
   É uma função física que projeta um raio invisível na cena, devolvendo um valor booleano que indica se a colisão desse raio acertou um alvo algum objeto.
+from pathlib import Path
 
-```
-using UnityEngine;
+## 🎮 Cena
 
-public class raycast : MonoBehaviour
-{
-    public float rayDistance = 2f;
-    public Color rayColor = Color.red;
+Nesta cena, foi criado um um cubo no qual será fixado o script do raycast e sua origem. Junto com cápsulas (com sua tag padrão mantida) e um plano.
 
-    void Update()
-    {
-        // Posição e direção do raio baseada na rotação atual do objeto
-        Vector3 origin = transform.position;
-        Vector3 direction = transform.TransformDirection(Vector3.forward);
+### 🖼️ Imagem da cena:
 
-        
-        // Lança o raio
-        if (Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance))
-        {
-            Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
-            if (hit.collider.gameObject.CompareTag("inimigo")) 
-            {
-                if (Input.GetKey(KeyCode.E))
-                {
-                    Destroy(hit.collider.gameObject);
-                }
-            }
-        }
-        // Desenha o raio na cena para visualização
-        Debug.DrawRay(origin, direction * rayDistance, rayColor);
-    }
-}
-```
+![Cena](C:\Users\Hudson\OneDrive\Imagens\Capturas de tela\Screenshot 2025-04-11 190501.png)
