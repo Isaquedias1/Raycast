@@ -28,16 +28,34 @@ Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance); // Lança o
 Debug.DrawRay(origin, direction * rayDistance, rayColor); // Desenha o raio no editor
 ```
 
----
+![Cena](CAMINHO/DA/IMAGEM1.png)
 
+---
 
 ## 📡 Detectar Objetos com Raycast
 
 Para confirmar se o raio colidiu com algo, usamos o `Debug.Log` para mostrar o nome do objeto atingido no console.
 
 ```csharp
-if (Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance))
-{
     Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
+```
+
+![Cena](CAMINHO/DA/IMAGEM1.png)
+
+---
+
+## 💥 Destruir o Objeto
+
+Se o objeto atingido pelo Raycast tiver a tag `"inimigo"`, e o jogador pressionar a tecla **E**, o objeto será destruído.
+
+```csharp
+if (hit.collider.gameObject.CompareTag("inimigo")) // Verifica se a tag é inimigo
+{
+    if (Input.GetKey(KeyCode.E)) // Verifica se a tecla e foi pressionada
+    {
+        Destroy(hit.collider.gameObject); // destrói o objeto
+    }
 }
 ```
+
+![Cena](CAMINHO/DA/IMAGEM1.png)
