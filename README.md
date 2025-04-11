@@ -58,4 +58,4 @@ if (hit.collider.gameObject.CompareTag("inimigo")) // Verifica se a tag é inimi
 }
 ```
 
-![Cena](CAMINHO/DA/IMAGEM1.png)
+![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185105.png)
