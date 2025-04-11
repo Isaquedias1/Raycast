@@ -28,7 +28,7 @@ Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance); // Lança o
 Debug.DrawRay(origin, direction * rayDistance, rayColor); // Desenha o raio no editor
 ```
 
-![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20184958.png)
+![visualizacao](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20184958.png)
 
 ---
 
@@ -40,7 +40,7 @@ Para confirmar se o raio colidiu com algo, usamos o `Debug.Log` para mostrar o n
     Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
 ```
 
-![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185030.png)
+![console](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185030.png)
 
 ---
 
@@ -58,7 +58,7 @@ if (hit.collider.gameObject.CompareTag("inimigo")) // Verifica se a tag é inimi
 }
 ```
 
-![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185105.png)
+![destruir](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185105.png)
 
 ---
 
@@ -96,3 +96,7 @@ public class raycast : MonoBehaviour
     }
 }
 ```
+---
+
+## Video
+![video](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Desktop%202025.04.11%20-%2020.15.34.03.mp4)
