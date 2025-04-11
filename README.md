@@ -59,3 +59,40 @@ if (hit.collider.gameObject.CompareTag("inimigo")) // Verifica se a tag é inimi
 ```
 
 ![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185105.png)
+
+---
+
+## Código completo
+
+```csharp
+using UnityEngine;
+
+public class raycast : MonoBehaviour
+{
+    public float rayDistance = 2f;
+    public Color rayColor = Color.red;
+
+    void Update()
+    {
+        // Posição e direção do raio baseada na rotação atual do objeto
+        Vector3 origin = transform.position;
+        Vector3 direction = transform.TransformDirection(Vector3.forward);
+
+        
+        // Lança o raio
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance))
+        {
+            Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
+            if (hit.collider.gameObject.CompareTag("inimigo")) 
+            {
+                if (Input.GetKey(KeyCode.E))
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+        // Desenha o raio na cena para visualização
+        Debug.DrawRay(origin, direction * rayDistance, rayColor);
+    }
+}
+```
