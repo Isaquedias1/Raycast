@@ -9,7 +9,7 @@ O Raycast é uma função da física que projeta um raio invisível na cena e re
 Nesta cena, foi criado um **cubo**, que serve como origem do Raycast e recebe o script.  
 Também foram adicionadas algumas **cápsulas com a tag "inimigo"** (usando Prefabs) e um **plano** para dar contexto visual à cena.
 
-![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20184958.png)
+![Cena]()
 
 ---
 
@@ -28,7 +28,7 @@ Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance); // Lança o
 Debug.DrawRay(origin, direction * rayDistance, rayColor); // Desenha o raio no editor
 ```
 
-![Cena](CAMINHO/DA/IMAGEM1.png)
+![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20184958.png)
 
 ---
 
@@ -40,7 +40,7 @@ Para confirmar se o raio colidiu com algo, usamos o `Debug.Log` para mostrar o n
     Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
 ```
 
-![Cena](CAMINHO/DA/IMAGEM1.png)
+![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20185030.png)
 
 ---
 
