@@ -9,7 +9,7 @@ O Raycast é uma função da física que projeta um raio invisível na cena e re
 Nesta cena, foi criado um **cubo**, que serve como origem do Raycast e recebe o script.  
 Também foram adicionadas algumas **cápsulas com a tag "inimigo"** (usando Prefabs) e um **plano** para dar contexto visual à cena.
 
-![Cena]()
+![Cena](https://github.com/Isaquedias1/Raycast/blob/main/fotos_e_video/Screenshot%202025-04-11%20190501.png)
 
 ---
 
