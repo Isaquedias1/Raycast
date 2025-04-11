@@ -12,12 +12,19 @@ Nesta cena, foi criado um um cubo no qual será fixado o script do raycast e sua
 
 ---
 
-## Lançar e mostrar o ray ast
+## Lançar e mostrar o Raycast
 
-Nesta parte é laçado um raio um **raio vermelho** à sua frente.  
-Esse raio é lançado a partir da posição atual do cubo e segue na direção em que ele está olhando (forward).
+Nesta parte é laçado um raio vermelho. Esse raio é lançado a partir da posição atual do cubo e segue na direção em que ele está olhando (forward).
 
 ```csharp
-Vector3 origin = transform.position;
-Vector3 direction = transform.TransformDirection(Vector3.forward);
-Debug.DrawRay(origin, direction * rayDistance, rayColor);
+public float rayDistance = 2f; // define a distância do objeto
+public Color rayColor = Color.red; // define a cor do raio como vermelho para a visualização do desenvolvedor
+
+Vector3 origin = transform.position; // define o ponto de origem do raio como a posição atual do objeto
+Vector3 direction = transform.TransformDirection(Vector3.forward); // define um direção fixa ao objeto que muda conforme a rotação do mesmo
+
+Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance) // lança o raio apartir dos valores ja definidos anteriormente
+
+Debug.DrawRay(origin, direction * rayDistance, rayColor); // desenha o raio para visualização do desenvolvedor
+```
+![Cena]()
