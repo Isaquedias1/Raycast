@@ -1,47 +1,29 @@
-# Raycast
-Um estudo sobre o ray cast do unity
+# 🎯 Raycast
 
-  É uma função física que projeta um raio invisível na cena, devolvendo um valor booleano que indica se a colisão desse raio acertou um alvo algum objeto.
-from pathlib import Path
-
-## Cena
-
-Nesta cena, foi criado um um cubo no qual será fixado o script do raycast e sua origem. Junto com cápsulas prefabs para manterem sua tag "inimigo", e um plano.
-
-![Cena]()
+O Raycast é uma função da física que projeta um raio invisível na cena e retorna um valor booleano, indicando se esse raio colidiu com algum objeto.
 
 ---
 
-## Lançar e mostrar o Raycast
+## 🎮 Cena Inicial
 
-Nesta parte é laçado um raio vermelho. Esse raio é lançado a partir da posição atual do cubo e segue na direção em que ele está olhando (forward).
+Nesta cena, foi criado um **cubo**, que serve como origem do Raycast e recebe o script.  
+Também foram adicionadas algumas **cápsulas com a tag "inimigo"** (usando Prefabs) e um **plano** para dar contexto visual à cena.
 
-```csharp
-public float rayDistance = 2f; // define a distância do objeto
-public Color rayColor = Color.red; // define a cor do raio como vermelho para a visualização do desenvolvedor
+![Cena](CAMINHO/DA/IMAGEM1.png)
 
-Vector3 origin = transform.position; // define o ponto de origem do raio como a posição atual do objeto
-Vector3 direction = transform.TransformDirection(Vector3.forward); // define um direção fixa ao objeto que muda conforme a rotação do mesmo
+---
 
-Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance) // lança o raio apartir dos valores ja definidos anteriormente
+## 🚀 Lançar e Visualizar o Raycast
 
-Debug.DrawRay(origin, direction * rayDistance, rayColor); // desenha o raio para visualização do desenvolvedor
-```
-![Cena]()
-## Indicar se algum objeto foi atingido
-
-Para confirmar se algum objeto foi atingido utilizamos o debug.log para findicar no console se ocorreu a colisão através de um atributo do RaycastHit.
+Nesta parte, um **raio vermelho** é lançado a partir da posição atual do cubo e segue a direção para onde ele está virado (`forward`).
 
 ```csharp
-Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name); 
+public float rayDistance = 2f; // Define a distância do raio
+public Color rayColor = Color.red; // Define a cor do raio (apenas visual)
+
+Vector3 origin = transform.position; // Origem do raio: posição do cubo
+Vector3 direction = transform.TransformDirection(Vector3.forward); // Direção do raio: frente do cubo, considerando sua rotação
+
+Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance); // Lança o raio
+Debug.DrawRay(origin, direction * rayDistance, rayColor); // Desenha o raio no editor
 ```
-![Cena]()
-
-## Destruir o objeto
-
-Destroi o objeto caso o raio estaja atingindo, esteja com a tag inimigo e o usuário prescione a tecla "e".
-
-```csharp
-Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name); 
-```
-![Cena]()
