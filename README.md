@@ -14,7 +14,7 @@ Nesta cena, foi criado um um cubo no qual será fixado o script do raycast e sua
 
 ## Lançar e mostrar o ray ast
 
-Nesta parte, o código faz com que o cubo emita um **raio vermelho** à sua frente.  
+Nesta parte é laçado um raio um **raio vermelho** à sua frente.  
 Esse raio é lançado a partir da posição atual do cubo e segue na direção em que ele está olhando (forward).
 
 ```csharp
