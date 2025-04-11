@@ -28,3 +28,20 @@ Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance) // lança o 
 Debug.DrawRay(origin, direction * rayDistance, rayColor); // desenha o raio para visualização do desenvolvedor
 ```
 ![Cena]()
+## Indicar se algum objeto foi atingido
+
+Para confirmar se algum objeto foi atingido utilizamos o debug.log para findicar no console se ocorreu a colisão através de um atributo do RaycastHit.
+
+```csharp
+Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name); 
+```
+![Cena]()
+
+## Destruir o objeto
+
+Destroi o objeto caso o raio estaja atingindo, esteja com a tag inimigo e o usuário prescione a tecla "e".
+
+```csharp
+Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name); 
+```
+![Cena]()
