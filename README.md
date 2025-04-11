@@ -27,3 +27,17 @@ Vector3 direction = transform.TransformDirection(Vector3.forward); // Direção 
 Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance); // Lança o raio
 Debug.DrawRay(origin, direction * rayDistance, rayColor); // Desenha o raio no editor
 ```
+
+---
+
+
+## 📡 Detectar Objetos com Raycast
+
+Para confirmar se o raio colidiu com algo, usamos o `Debug.Log` para mostrar o nome do objeto atingido no console.
+
+```csharp
+if (Physics.Raycast(origin, direction, out RaycastHit hit, rayDistance))
+{
+    Debug.Log("Raycast atingiu: " + hit.collider.gameObject.name);
+}
+```
