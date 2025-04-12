@@ -1,3 +1,5 @@
+Membros: Hudson Araújo e Isaque Dias
+
 # 🎯 Raycast
 
 O Raycast é uma função da física que projeta um raio invisível na cena e retorna um valor booleano, indicando se esse raio colidiu com algum objeto.
